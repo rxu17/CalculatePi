@@ -31,13 +31,12 @@ def calculatePi(pValue):
         j = 0
         count = 0
         while (j < circlePoints):
-            x = (random.random()*(0.5)) + (0.5)
-            circleEq = (0.5) + math.sqrt(0.25-((x - (0.5))**2))
+            x = (random.random()*(0.5)) + (0.5) # taking a random point in the upper right quadrant of circle
+            circleEq = (0.5) + math.sqrt(0.25-((x - (0.5))**2)) # the circle equation for a circle of center (0.5, 0.5) and radius 1
             y = (random.random()*(0.5)) + (0.5)
     
             if (y <= circleEq):
                 count += 1
-
             j += 1  
         
         frac = (count)/float(circlePoints)
