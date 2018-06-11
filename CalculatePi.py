@@ -4,7 +4,7 @@
 #
 # This program also calculates the quality of the calculated pi values with increasing points
 
-import random
+import quantumrandom
 import math
 import numpy as np
 import matplotlib.pyplot as plt
@@ -20,8 +20,8 @@ dataPi = []
 
 # this simulates points for square (x,y) between 0 and 1
 for i in range(1000):
-    datax.append(random.random())
-    datay.append(random.random())
+    datax.append(quantumrandom.randint(0,10)/10)
+    datay.append(quantumrandom.randint(0,10)/10)
 
 # circle function
 
@@ -31,9 +31,9 @@ def calculatePi(pValue):
         j = 0
         count = 0
         while (j < circlePoints):
-            x = (random.random()*(0.5)) + (0.5) # taking a random point in the upper right quadrant of circle
+            x = (quantumrandom.randint(0,10)*(0.05)) + (0.5) # taking a random point in the upper right quadrant of circle
             circleEq = (0.5) + math.sqrt(0.25-((x - (0.5))**2)) # the circle equation for a circle of center (0.5, 0.5) and radius 1
-            y = (random.random()*(0.5)) + (0.5)
+            y = (quantumrandom.randint(0,10)*(0.05)) + (0.5)
     
             if (y <= circleEq):
                 count += 1
